@@ -29,16 +29,12 @@ jobs:
         run: npm run cypress:headless
 
       - name: Generate Allure report
-        run: allure generate allure-results --clean -o allure-report
-
-      - name: Copy test execution videos, screenshots and reports
         run: |
-          mkdir public
-          cp -a allure-report/. public
-          cp -r allure-results public/allure-results
-      
-      - name: Deploy report page to GitHub Page
-        uses: peaceiris/actions-gh-pages@v3
+          - allure generate allure-results --clean -o allure-report
+          - zip -r allure-report.zip allure-report
+        
+      - name: Upload do relatório como artifact
+        uses: actions/upload-artifact@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+            name: allure-report
+            path: allure-report.zip
