@@ -13,5 +13,8 @@
   "devDependencies": {
     "allure-cypress": "^3.2.1",
     "cypress": "^14.2.1"
+  },
+  "dependencies": {
+    "swaglabsautomationcypress": "file:"
   }
 }

@@ -1,7 +1,7 @@
-import loginPageElements from '../support/pageObjects/loginElement.js';
+import loginPageElements from '../support/pageObjects/loginPage.js';
 import cartPageElements from './pageObjects/cartPage.js';
 import checkoutPageElements from './pageObjects/checkoutPage.js';
-import productPageElements from './pageObjects/productPageElement.js';
+import productPageElements from './pageObjects/productPage.js';
 import specificProductPage from './pageObjects/productSpecificationPage.js';
 
 Cypress.Commands.add('open_web_page', () => {
