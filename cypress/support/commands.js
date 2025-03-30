@@ -4,7 +4,7 @@ import checkoutPageElements from './pageObjects/checkoutPage.js';
 import productPageElements from './pageObjects/productPage.js';
 import specificProductPage from './pageObjects/productSpecificationPage.js';
 
-Cypress.Commands.add('open_web_page', () => {
+Cypress.Commands.add('openWebPage', () => {
     cy.visit('/')
     cy.get(loginPageElements.loginPageMainLogo).should('be.visible')
 })
@@ -16,25 +16,25 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get(productPageElements.productPageLogo).should('be.visible')
 })
 
-Cypress.Commands.add('add_product_to_cart', () => {
+Cypress.Commands.add('addProductToCart', () => {
     cy.get(productPageElements.addToCartButtonBackPack).click()
     cy.get(productPageElements.shoppingCartBadge).should('have.text','1')
     cy.get(productPageElements.removeBackPackProduct).should('be.visible')
 })
 
-Cypress.Commands.add('open_item_description_page', () => {
+Cypress.Commands.add('openItemDescriptionPage', () => {
     cy.get(productPageElements.backPackItemLink).click()
     cy.get(specificProductPage.productImg).should('be.visible')
     cy.get(specificProductPage.addToCartBtn).should('be.visible')
 })
 
-Cypress.Commands.add('add_product_to_cart_from_single_item', () => {
+Cypress.Commands.add('addProductToCartFromSingleItem', () => {
     cy.get(specificProductPage.addToCartBtn).click()
     cy.get(productPageElements.shoppingCartBadge).should('have.text','1')
     cy.get(specificProductPage.removeCartBtn).should('be.visible')
 })
 
-Cypress.Commands.add('open_cart', () => {
+Cypress.Commands.add('openCart', () => {
     cy.get(productPageElements.cartBtn).click()
     cy.get(cartPageElements.cartPageTitle).should('have.text', 'Your Cart')
     cy.get(cartPageElements.shoppingProductName).should('be.visible')
@@ -42,14 +42,14 @@ Cypress.Commands.add('open_cart', () => {
     cy.get(cartPageElements.checkoutBtn).should('be.visible')
 })
 
-Cypress.Commands.add('go_to_checkout', () => {
+Cypress.Commands.add('goToCheckout', () => {
     cy.get(cartPageElements.checkoutBtn).click()
     cy.get(checkoutPageElements.checkoutTitle).should('have.text', 'Checkout: Your Information')
     cy.get(checkoutPageElements.checkoutCancelBtn).should('be.visible')
     cy.get(checkoutPageElements.checkoutContinueBtn).should('be.visible')
 })
 
-Cypress.Commands.add('fill_checkout_info', (firstName, lastName, zipCode) => {
+Cypress.Commands.add('fillCheckoutInfo', (firstName, lastName, zipCode) => {
     cy.get(checkoutPageElements.checkoutFirstName).type(firstName)
     cy.get(checkoutPageElements.checkoutLastName).type(lastName)
     cy.get(checkoutPageElements.checkoutZipCode).type(zipCode)
@@ -58,7 +58,7 @@ Cypress.Commands.add('fill_checkout_info', (firstName, lastName, zipCode) => {
     cy.get(checkoutPageElements.checkoutItemName).should('be.visible')
 })
 
-Cypress.Commands.add('finish_shopping', () => {
+Cypress.Commands.add('finishShopping', () => {
     cy.get(checkoutPageElements.checkoutFinishBtn).click()
     cy.get(checkoutPageElements.checkoutTitle).should('have.text', 'Checkout: Complete!')
     cy.get(checkoutPageElements.checkoutFinishedMsg).should('have.text', 'Thank you for your order!')

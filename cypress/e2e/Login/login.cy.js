@@ -1,3 +1,5 @@
+///<reference types='cypress'/>
+
 describe('SwagLabs Login Validation', { tags: ['login'] }, () => {
 
   let loginData
@@ -9,7 +11,7 @@ describe('SwagLabs Login Validation', { tags: ['login'] }, () => {
     })
 
   it('Successfull Login', { tags: ['success'] }, () => {
-    cy.open_web_page()
+    cy.openWebPage()
     cy.login(loginData.username, loginData.password)
   })
 })
