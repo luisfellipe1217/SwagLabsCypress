@@ -22,11 +22,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Allure Reports
+        run: npm install -g allure-commandline  
+
       - name: Run Cypress tests
         run: npm run cypress:headless
 
       - name: Generate Allure report
-        run: npm run report:allure
+        run: allure generate allure-results --clean -o allure-report
 
       - name: Copy test execution videos, screenshots and reports
         run: |
