@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","2803","Buying backpack product","SwagLabs Shopping Validation","Sun Mar 30 14:04:56 GMT-03:00 2025","passed","Sun Mar 30 14:04:59 GMT-03:00 2025","","Shopping from a specific product page","",""
-"","5682","Buying backpack product","SwagLabs Shopping Validation","Sun Mar 30 14:04:50 GMT-03:00 2025","passed","Sun Mar 30 14:04:56 GMT-03:00 2025","","Shopping directly by product home page","",""
-"","2273","Successfull Login","SwagLabs Login Validation","Sun Mar 30 14:05:03 GMT-03:00 2025","passed","Sun Mar 30 14:05:06 GMT-03:00 2025","","","",""
