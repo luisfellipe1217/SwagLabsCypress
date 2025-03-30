@@ -15,7 +15,13 @@ This project uses Cypress for test automation on the [SauceDemo](https://www.sau
 |   |   |  ├── login.cy.js    
 │   │   ├── shopping/  
 │   │   |  ├── shopping.cy.js  
-│   ├── support/  
+│   ├── support/
+│   │   ├── pageObjects/
+│   │   |  ├── cartPage.js
+│   │   |  ├── checkoutPage.js
+│   │   |  ├── loginPage.js
+│   │   |  ├── productPage.js 
+│   │   |  ├── productSpecificationPage.js
 │   ├── fixtures/   
 ├── .github/  
 │   ├── workflows/  
